@@ -1,5 +1,5 @@
 body { margin: 0; }
-canvas { width: 90%; height: 90% }
+canvas { width: 100%; height: 100% }
 /* unvisited link */
 a:link {
     color: white;
@@ -20,12 +20,11 @@ TITLE SECTION
 ==================================================*/
 .title {
     position: absolute;
-    top: 10px;
-    width: 100%;
-    padding: 5px;
+    top: 20px;
+    padding: 10px;
     font-family:Monospace;
     font-size:33px;
-    text-align:center;
+    text-align:left;
     color: white
 }
 
@@ -35,7 +34,7 @@ FOOTER SECTION
 
 .footer {
     position: absolute;
-    bottom: 5px;
+    bottom: 20px;
     width: 98%;
     padding: 5px;
     font-family:Monospace;
