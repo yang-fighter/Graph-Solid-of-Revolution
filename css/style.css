@@ -1,0 +1,46 @@
+body { margin: 0; }
+canvas { width: 90%; height: 90% }
+/* unvisited link */
+a:link {
+    color: white;
+}
+
+/* visited link */
+a:visited {
+    color: lightblue;
+}
+
+/* mouse over link */
+a:hover {
+    color: lightgreen;
+}
+
+/*================================================
+TITLE SECTION
+==================================================*/
+.title {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    padding: 5px;
+    font-family:Monospace;
+    font-size:33px;
+    text-align:center;
+    color: white
+}
+
+/*================================================
+FOOTER SECTION
+==================================================*/
+
+.footer {
+    position: absolute;
+    bottom: 5px;
+    width: 98%;
+    padding: 5px;
+    font-family:Monospace;
+    font-size:20px;
+    text-align:right;
+    color: white
+}
+
