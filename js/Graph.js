@@ -79,13 +79,9 @@ function init() {
     window.addEventListener( 'resize', onWindowResize, false );
 
 
-    // Helpers
-    // scene.add( new THREE.AxesHelper( 20 ) );
-	var gridXY = new THREE.GridHelper( 2 * xRange, 2 * yRange, 0xFF0000, 0xFFFFFF);
-	// gridXY.position.set( 100,100,0 );
-	gridXY.rotation.x = Math.PI/2;
-	// gridXY.setColors( new THREE.Color(0x000066), new THREE.Color(0x000066) );
-	scene.add(gridXY);
+    var gridXY = new THREE.GridHelper( 2 * xRange, 2 * yRange, 0xFF0000, 0xFFFFFF);
+    gridXY.rotation.x = Math.PI/2;
+    scene.add(gridXY);
 
 
 
@@ -285,12 +281,12 @@ function init() {
 
     gui.add( params, 'opacity', 0, 1 ).onChange(
         function(value) {
-                scene.remove(solid);
-                solid = new THREE.Group();
-                scene.add( solid );
+            scene.remove(solid);
+            solid = new THREE.Group();
+            scene.add( solid );
 
-                drawSolid();
-                solid.visible = params.displaySolid;
+            drawSolid();
+            solid.visible = params.displaySolid;
 
 
 
@@ -327,11 +323,11 @@ function initEquations() {
 
 
     if ( params.equation1.replace(/\s/g, '') === params.equation2.replace(/\s/g, '') ) {
-		sweetAlert("Malformed equation", "Two equations are the same!", "error");
+        sweetAlert("Malformed equation", "Two equations are the same!", "error");
     }
 
     if ( params.boundary1.replace(/\s/g, '') === params.boundary2.replace(/\s/g, '') ) {
-		sweetAlert("Malformed equation", "Two boudaries are the same!", "error");
+        sweetAlert("Malformed equation", "Two boudaries are the same!", "error");
     }
 
     topEquation = new Equation( params.equation1, "First equation" );
@@ -341,11 +337,11 @@ function initEquations() {
     rotateAxis = new Equation( params.axis, 'Rotation axis');
 
     if ( topEquation.type === equationType.EQUATION_NONE ) {
-		sweetAlert("Malformed equation", "You should type in the first equation", "error");
+        sweetAlert("Malformed equation", "You should type in the first equation", "error");
     }
 
     if ( topEquation.type !== botEquation.type ) {
-		sweetAlert("Malformed equation", "Two equations should have the same type", "error");
+        sweetAlert("Malformed equation", "Two equations should have the same type", "error");
     }
 
     if ( topEquation.type === rotateAxis.type && topEquation.value === rotateAxis.value ) {
@@ -353,7 +349,7 @@ function initEquations() {
     }
 
     if ( leftBound.type !== rightBound.type ) {
-		sweetAlert("Malformed equation", "Two boudaries should have the same type", "error");
+        sweetAlert("Malformed equation", "Two boudaries should have the same type", "error");
     }
 
     if ( leftBound.type === topEquation.type ) {
@@ -427,26 +423,26 @@ function getEquationType( equation, name ) {
 
     if ( equation.length > 2 ) {
 
-		sweetAlert("Malformed equation", "The " + name + " cannot have more than one equals sign", "error");
-		return equationType.EQUATION_INVALID;
+        sweetAlert("Malformed equation", "The " + name + " cannot have more than one equals sign", "error");
+        return equationType.EQUATION_INVALID;
 
-	} else if ( equation.length === 2 && equation[0].trim() === "x" ) {
+    } else if ( equation.length === 2 && equation[0].trim() === "x" ) {
 
         return equationType.EQUATION_X;
 
-	} else if ( equation.length === 1 && equation[0].trim() !== "" || equation[0].trim() === "y" ) {
+    } else if ( equation.length === 1 && equation[0].trim() !== "" || equation[0].trim() === "y" ) {
 
-		return equationType.EQUATION_Y;
+        return equationType.EQUATION_Y;
 
-	} else if ( equation[0].trim() !== "" ) {
+    } else if ( equation[0].trim() !== "" ) {
 
-		sweetAlert("Invalid equation type", "The " + name + " should be a function of x or y", "error");
-		return equationType.EQUATION_INVALID;
+        sweetAlert("Invalid equation type", "The " + name + " should be a function of x or y", "error");
+        return equationType.EQUATION_INVALID;
 
-	}
+    }
 
     sweetAlert("Invalid equation type", "The " + name + " should be a function of x or y", "error");
-	return equationType.EQUATION_NONE;
+    return equationType.EQUATION_NONE;
 }
 
 function drawFunction() {
@@ -529,7 +525,7 @@ function drawSolid() {
     // var mesh1 = new THREE.Mesh( geometry, material );
     // if ( rotateAxis.type === equationType.EQUATION_Y ) {
 
-        // mesh1.rotation.y = Math.PI;
+    // mesh1.rotation.y = Math.PI;
 
     // }
     // var mesh2 = mesh1.clone();
