@@ -79,7 +79,7 @@ function init() {
     window.addEventListener( 'resize', onWindowResize, false );
 
 
-    var gridXY = new THREE.GridHelper( 2 * xRange, 2 * yRange, 0xFF0000, 0xFFFFFF);
+    var gridXY = new THREE.GridHelper( 2 * xRange, 2 * yRange, 0xFFFF00, 0x808080);
     gridXY.rotation.x = Math.PI/2;
     scene.add(gridXY);
 
@@ -462,7 +462,7 @@ function drawFunction() {
 
     }
 
-    var line1 = new THREE.Line( geometry, new THREE.LineBasicMaterial({ color: 0x00ffff }) );
+    var line1 = new THREE.Line( geometry, new THREE.LineBasicMaterial({ color: 0x21fc0d }) );
 
     // draw equation 2
 
@@ -474,7 +474,7 @@ function drawFunction() {
 
     }
 
-    var line2 = new THREE.Line( geometry, new THREE.LineBasicMaterial({ color: 0x7fffd4 }) );
+    var line2 = new THREE.Line( geometry, new THREE.LineBasicMaterial({ color: 0xff3503 }) );
 
     lines.add( line1, line2 );
 
